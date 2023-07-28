@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <title>Ammarhes - Login/Cadastro</title>
+</head>
+
+<body>
+  <main>
+    <div class="login-container" id="login-container">
+      <div class="form-container">
+        <form class="form form-login" id="login-form">
+          <h2 class="form-title">Login</h2>
+          <div class="form-input-container">
+            <input type="email" class="form-input" id="email" placeholder="Email">
+            <input type="password" class="form-input" id="password" placeholder="Senha">
+            <div class="g-recaptcha" data-sitekey="6LfZrGEnAAAAAGVFHbMjtY7oxqaU_lccv3TXQ_1V"></div>
+          </div>
+          <a href="#" class="form-link">Esqueceu sua senha?</a>
+          <button type="submit" class="form-button" id="submit-button">Entrar</button>
+          <p class="mobile-text">
+            Não tem conta?
+            <a href="#" id="open-register-mobile">Registre-se!</a>
+          </p>
+        </form>
+        <form class="form form-register">
+          <h2 class="form-title">Criar Conta</h2>
+          <div class="form-input-container">
+            <input type="text" class="form-input" placeholder="Nome Completo">
+            <input type="email" class="form-input" placeholder="Email">
+            <input type="password" class="form-input" placeholder="Senha">
+          </div>
+          <p class="terms">Ao se cadastrar você aceita os nossos <a href="#">Termos de Uso.</a></p>
+          <button type="button" class="form-button">Cadastrar</button>
+          <p class="mobile-text">
+            Já tem conta?
+            <a href="#" id="open-login-mobile">Login.</a>
+          </p>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <h1 class="form-title form-title-light">Já tem cadastro?</h1>
+          <p class="form-text">Para entrar na nossa plataforma faça login com suas informações</p>
+          <button class="form-button form-button-light" id="open-login">Entrar</button>
+        </div>
+        <div class="overlay">
+          <h1 class="form-title form-title-light">Crie sua Conta!</h1>
+          <p class="form-text">Seja Bem Vindo!<br>Caso não tenha conta, faça seu cadastro e realize o acesso
+            na parte de login.</p>
+          <button class="form-button form-button-light" id="open-register">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

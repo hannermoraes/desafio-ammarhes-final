@@ -1,0 +1,321 @@
+/* Importação de fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset CSS */
+/* Define algumas propriedades padrão para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo padrão para links */
+a {
+  text-decoration: none;
+  color: var(--text-color-dark);
+}
+
+/* Padronização de cores */
+:root {
+  --primary-color: #141E30;
+  --secundary-color: #FFF;
+  --third-color: #243B55;
+  --linear-grad: linear-gradient(to right, #141e30, #243B55);
+  --text-color-dark: #000;
+  --text-color-light: #fff;
+  --icon-color: #F3F3F3;
+}
+
+
+/* Estrutura principal */
+main {
+  height: 100vh;
+  background: var(--secundary-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estrutura do login - responsiva @media */
+.login-container {
+  position: relative;
+  height: 500px;
+  width: 850px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #A0A0A0;
+  overflow: hidden;
+}
+
+/* Estilo responsivo para dispositivos com largura máxima de 768px */
+@media (max-width:768px) {
+  .login-container {
+    width: 75vw;
+    height: 75vh;
+  }
+}
+
+/* Estilo responsivo para dispositivos com largura máxima de 480px */
+@media (max-width:480px) {
+  .login-container {
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+    border-radius: inherit;
+  }
+}
+
+/* Estrutura do formulário */
+.form-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: var(--secundary-color);
+}
+
+.form {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--secundary-color);
+  padding: 55px 0;
+  transition: 1s;
+}
+
+/* Estilos para o título e texto do formulário */
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.form-text {
+  font-size: 0.75rem;
+}
+
+.form-title-light {
+  color: var(--text-color-light);
+}
+
+/* Estilos para os campos de input do formulário */
+.form-input {
+  width: 300px;
+  height: 40px;
+  padding: 10px 20px;
+  border-style: none;
+  background-color: var(--icon-color);
+  border-radius: 10px;
+  outline: none;
+  font-size: 12px;
+}
+
+input::placeholder {
+  font-size: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Termos e Condições */
+
+.terms {
+  margin-top: -15px;
+  font-size: 8px;
+}
+
+.terms a {
+  font-style: italic;
+  color: var(--third-color);
+}
+
+/* Estilo para opção de Lembrar senha */
+
+/* Estilos para os links do formulário */
+.form-link {
+  border-bottom: 1px solid #EEE;
+  font-size: 12px;
+}
+
+.form-link:hover {
+  border-bottom: 1px solid #243B55;
+  transition: ease-in .2s;
+}
+
+/* Estilos dos botões do formulário */
+.form-button {
+  width: 140px;
+  height: 40px;
+  border-style: none;
+  border-radius: 50px;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: var(--text-color-light);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.form-button:hover {
+  background-color: var(--secundary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.form-button-light {
+  background: transparent;
+  border: 1px solid var(--secundary-color);
+  color: var(--text-color-light);
+}
+
+.form-button-light:hover {
+  background-color: var(--secundary-color);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Estilos responsivos para dispositivos com largura máxima de 768px */
+@media (max-width:768px) {
+  .form-login .form-button {
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    border: 2px solid var(--secundary-color);
+  }
+
+  .form-login .form-button:hover {
+    background: var(--primary-color);
+    color: var(--secundary-color);
+  }
+
+  .form-register .form-button {
+    background: var(--primary-color);
+    color: var(--secundary-color);
+    border: 1px solid var(--secundary-color);
+  }
+}
+
+/* Estilo para a seção de registro do formulário */
+.form-register {
+  transform: translateX(-100%);
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Social formulário */
+.form-social {
+  display: flex;
+  gap: 24px;
+}
+
+/* Estilos para animações de transição no formulário */
+.login-container.move .form-login {
+  transform: translateX(100%);
+  z-index: 1;
+  opacity: 0;
+}
+
+.login-container.move .form-register {
+  transform: translateX(0%);
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Estilos responsivos para dispositivos com largura máxima de 768px */
+@media (max-width:768px) {
+  .form {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .form-register {
+    position: absolute;
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    transform: translateX(100%);
+  }
+
+  .login-container.move .form-register {
+    transform: translateX(0%);
+  }
+}
+
+/* Overlay container */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  color: var(--text-color-light);
+  text-align: center;
+  transform: translateX(100%);
+  z-index: 10;
+  transition: 1.2s;
+}
+
+.login-container.move .overlay-container {
+  transform: translateX(0%);
+}
+
+/* Estilos responsivos para dispositivos com largura máxima de 768px */
+@media (max-width:768px) {
+  .overlay-container {
+    display: none;
+  }
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 40px;
+  background: var(--primary-color);
+  transition: 1s;
+}
+
+.login-container.move .overlay:nth-child(2) {
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Textos mobile / responsivos */
+.mobile-text {
+  display: none;
+}
+
+/* Estilos responsivos para dispositivos com largura máxima de 768px */
+@media (max-width:768px) {
+  .mobile-text {
+    display: block;
+  }
+
+  .mobile-text a {
+    font-weight: 700;
+    color: inherit;
+  }
+
+  .terms a {
+    font-size: 10px;
+    font-weight: 800;
+    font-style: normal;
+    color: white;
+  }
+}
