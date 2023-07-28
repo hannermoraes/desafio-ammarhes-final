@@ -13,7 +13,7 @@ passwordInput.addEventListener('click', mostrarRequisitosSenha);
 passwordInput.addEventListener('blur', limparRequisitosSenha);
 
 function mostrarRequisitosSenha() {
-  outSenha.textContent = "1 - A senha precisa ter 8 ou mais caracteres.\n2 - É necessário pelo menos um caractere especial. (Ex: .!@#$%^&*)\n3 - É preciso ter ao menos um número. (Ex: 1,2,3...)";
+  outSenha.textContent = "1 - A senha precisa ter no mínimo 8 caracteres.\n2 - É necessário pelo menos um caractere especial. (Ex:@$&).\n3 - É preciso ter ao menos um número. (Ex: 1,2,3...).\n4 - É necessário ter ao menos uma letra maiúscula. (Ex: A-Z).";
 }
 
 function limparRequisitosSenha() {
@@ -87,9 +87,9 @@ function saveUser(email, password, fullName) {
     return;
   }
 
-  const passwordRegex = /^(?=.*\d)(?=.*[.!@#$%^&*_\-])[A-Za-z\d!@#$%.^&*_\-]{8,}$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[.!@#$%^&*_\-])[A-Za-z\d!@#$%.^&*_\-]{8,}$/;
   if (!passwordRegex.test(password)) {
-    alert('A senha deve ter pelo menos 8 caracteres, incluindo pelo menos 1 caractere especial e 1 número.');
+    alert('1 - A senha precisa ter no mínimo 8 caracteres.\n2 - É necessário pelo menos um caractere especial. (Ex: .!@#$%^&*).\n3 - É preciso ter ao menos um número. (Ex: 1,2,3...).\n4 - É necessário ter ao menos uma letra maiúscula. (Ex: A-Z)."');
     return;
   }
 

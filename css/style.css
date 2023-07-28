@@ -141,8 +141,6 @@ input:focus {
   color: var(--third-color);
 }
 
-/* Estilo para opção de Lembrar senha */
-
 /* Estilos para os links do formulário */
 .form-link {
   border-bottom: 1px solid #EEE;
