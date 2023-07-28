@@ -95,6 +95,7 @@ main {
 }
 
 .form-text {
+  margin-top: -30px;
   font-size: 0.75rem;
 }
 
@@ -318,4 +319,8 @@ input:focus {
     font-style: normal;
     color: white;
   }
+}
+
+#outSenha {
+  font-size: 10px;
 }

@@ -6,6 +6,20 @@ document.getElementById('open-login').addEventListener('click', moveOverlay);
 document.getElementById('open-register-mobile').addEventListener('click', moveOverlay);
 document.getElementById('open-login-mobile').addEventListener('click', moveOverlay);
 
+const passwordInput = document.getElementById('password-input');
+const outSenha = document.getElementById('outSenha');
+
+passwordInput.addEventListener('click', mostrarRequisitosSenha);
+passwordInput.addEventListener('blur', limparRequisitosSenha);
+
+function mostrarRequisitosSenha() {
+  outSenha.textContent = "1 - A senha precisa ter 8 ou mais caracteres.\n2 - É necessário pelo menos um caractere especial.\n3 - É preciso ter ao menos um número.";
+}
+
+function limparRequisitosSenha() {
+  outSenha.textContent = "";
+}
+
 // Função para renderizar o reCAPTCHA
 function renderRecaptcha() {
   grecaptcha.render('submit-button', {
@@ -42,11 +56,11 @@ function handleLogin() {
     // Limpando o reCAPTCHA após o login bem-sucedido
     grecaptcha.reset();
   } else {
-    alert('Credenciais inválidas.\nPor favor, verifique se email e senha estão corretos.');
+    // Usuário não encontrado
+    alert('Usuário não encontrado!\nVerifique se email e senha estão corretos.');
+    grecaptcha.reset();
   }
 }
-// Adicionar o listener para o botão de login
-document.getElementById('submit-button').addEventListener('click', handleLogin);
 
 // Restante do código, incluindo as funções de validateLogin e saveUser (não foram alteradas)
 function validateLogin(email, password) {
@@ -54,14 +68,12 @@ function validateLogin(email, password) {
   const user = registeredUsers.find(user => user.email === email);
 
   if (!user) {
-    alert("Usuário não encontrado!\nVerifique se email e senha estão corretos.");
     return false;
   }
 
   if (user.password === password) {
     return true;
   } else {
-    alert('Credenciais inválidas.\nPor favor, verifique se email e senha estão corretos.');
     return false;
   }
 }
@@ -102,6 +114,9 @@ function handleRegister() {
   saveUser(email, password, fullName);
 }
 
+// Adicionar os listeners para os botões de registro e login (se existirem)
+document.querySelector('.form-login .form-button').addEventListener('click', handleLogin);
+document.querySelector('.form-register .form-button').addEventListener('click', handleRegister);
 
 
 
