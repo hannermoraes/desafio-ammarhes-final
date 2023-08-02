@@ -31,8 +31,6 @@ a {
 main {
   height: 100vh;
   background: var(--secondary-color);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,9 +127,8 @@ input:focus {
 }
 
 /* Termos e Condições */
-
 .terms {
-  margin-top: -15px;
+  margin-top: -5px;
   font-size: 8px;
 }
 
